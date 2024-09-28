@@ -14,7 +14,7 @@ public class CategorizedColumn<T> implements Column<T>{
      * Creates a new column under the given category name
      * @param category category of the column
      */
-    CategorizedColumn(String category) {
+    public CategorizedColumn(String category) {
         super();
         this.category = category;
         this.values = new ArrayList<>();

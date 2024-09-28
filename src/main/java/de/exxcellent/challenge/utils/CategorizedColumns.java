@@ -24,4 +24,21 @@ public class CategorizedColumns extends Columns<CategorizedColumn<?>> {
         }
         throw new Exception("No categories found");
     }
+
+    /**
+     * Adds a column, overriding an existing column if the category already exists and appending it at the end
+     * otherwise
+     * @param newColumn column to add
+     */
+    @Override
+    public void addColumn(CategorizedColumn<?> newColumn) {
+        int index = 0;
+        for (CategorizedColumn<?> column : columns) {
+            if (column.category.equals(newColumn.category)) {
+                columns.set(index, newColumn);
+            }
+            index++;
+        }
+        super.addColumn(newColumn);
+    }
 }
