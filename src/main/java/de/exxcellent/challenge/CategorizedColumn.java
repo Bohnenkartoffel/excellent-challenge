@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * A column with a String category name
  * @param <T> type of values stored in this column
  */
-public abstract class CategorizedColumn<T> implements Column<T>{
+public class CategorizedColumn<T> implements Column<T>{
     protected String category;
     protected ArrayList<T> values;
 
