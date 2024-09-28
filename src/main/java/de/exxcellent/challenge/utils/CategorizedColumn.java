@@ -63,4 +63,8 @@ public class CategorizedColumn<T> implements Column<T>{
         }
         return string.toString();
     }
+
+    public int size() {
+        return values.size();
+    }
 }
