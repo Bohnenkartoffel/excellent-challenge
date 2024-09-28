@@ -6,8 +6,8 @@ import java.util.ArrayList;
  * List of columns
  * @param <T> type of column in the list
  */
-public abstract class Columns<T extends Column> {
-    private ArrayList<T> columns;
+public abstract class Columns<T extends Column<?>> {
+    protected ArrayList<T> columns;
 
     /**
      * Creates a new, empty list of columns
@@ -23,10 +23,4 @@ public abstract class Columns<T extends Column> {
     public void addColumn(T column) {
         columns.add(column);
     }
-
-    /**
-     * retrieves a column from the list of columns
-     * @return a column
-     */
-    public abstract T getColumn();
 }

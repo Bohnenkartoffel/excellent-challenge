@@ -7,12 +7,12 @@ import java.util.ArrayList;
  * @param <T> type of values stored in this column
  */
 public abstract class CategorizedColumn<T> implements Column<T>{
-    private String category;
-    private ArrayList<T> values;
+    protected String category;
+    protected ArrayList<T> values;
 
     /**
      * Creates a new column under the given category name
-     * @param category categroy of the column
+     * @param category category of the column
      */
     CategorizedColumn(String category) {
         super();
@@ -24,7 +24,7 @@ public abstract class CategorizedColumn<T> implements Column<T>{
      * sets the value at the given index
      * @param value to be entered
      * @param row index of the value to be overwritten
-     * @throws IndexOutOfBoundsException
+     * @throws IndexOutOfBoundsException if row exceeds column length
      */
     @Override
     public void setValue(T value, int row) throws IndexOutOfBoundsException {
@@ -34,8 +34,8 @@ public abstract class CategorizedColumn<T> implements Column<T>{
     /**
      * gets the value at the given index
      * @param row index of the value to be retrieved
-     * @return
-     * @throws IndexOutOfBoundsException
+     * @return value at the given row
+     * @throws IndexOutOfBoundsException if row exceeds column length
      */
     @Override
     public T getValue(int row) throws IndexOutOfBoundsException {
