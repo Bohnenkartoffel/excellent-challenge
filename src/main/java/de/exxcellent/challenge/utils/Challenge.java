@@ -29,7 +29,7 @@ public abstract class Challenge {
      * extracts data from the CSV file to a CategorizedColumns structure
      * @throws IOException if there is an error reading from the CSV
      */
-    protected void extractCSVToCategorizedColumns() throws IOException {
+    protected void extractCSVToCategorizedColumns() throws Exception {
         CategorizedColumns columns = new CategorizedColumns();
         if (reader.hasNextLine()){
             ArrayList<String> categories = reader.nextLine();
@@ -44,5 +44,5 @@ public abstract class Challenge {
      * @param categories under which the values are to be stored
      * @return CategorizedColumns with the given categories and read values
      */
-    protected abstract CategorizedColumns extractColumnValues(ArrayList<String> categories) throws IOException;
+    protected abstract CategorizedColumns extractColumnValues(ArrayList<String> categories) throws Exception;
 }
