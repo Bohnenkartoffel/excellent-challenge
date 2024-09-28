@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * Rump class for the weather and football challenges
  */
 public abstract class Challenge {
-    CategorizedColumns columns;
+    protected CategorizedColumns columns;
     protected CSVFileReader reader;
 
     /**
@@ -45,4 +45,14 @@ public abstract class Challenge {
      * @return CategorizedColumns with the given categories and read values
      */
     protected abstract CategorizedColumns extractColumnValues(ArrayList<String> categories) throws Exception;
+
+    /**
+     * Calculates absolute distance between two values
+     * @param valueA first value
+     * @param valueB second value
+     * @return distance between values
+     */
+    protected float calculateSpread(float valueA, float valueB) {
+        return Math.abs(valueA - valueB);
+    }
 }

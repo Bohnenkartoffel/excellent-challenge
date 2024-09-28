@@ -60,4 +60,30 @@ public class WeatherChallenge extends Challenge {
         }
         return columns;
     }
+
+    /**
+     * executes the challenge and finds the day with the least spread between maximum and minimum temperature
+     * @return First day with minimum temperature spread
+     * @throws Exception if no day has been found or other errors occurred
+     */
+    public int run() throws Exception {
+        int result = -1;
+        float currentMinimalSpread = -1;
+
+        //Iterate through days and find minimal spread
+        for (int i = 0; i < columns.getColumn("Day").size(); i++) {
+            float MnT = (float) columns.getColumn("MnT").getValue(i);
+            float MxT = (float) columns.getColumn("MxT").getValue(i);
+            float spread = calculateSpread(MnT, MxT);
+            if (spread < currentMinimalSpread || currentMinimalSpread < 0) {
+                currentMinimalSpread = spread;
+                result = (int) columns.getColumn("Day").getValue(i);
+            }
+        }
+
+        if (result == -1) {
+            throw new Exception("No day found");
+        }
+        return result;
+    }
 }
