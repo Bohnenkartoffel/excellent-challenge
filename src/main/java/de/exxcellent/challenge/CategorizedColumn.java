@@ -2,11 +2,11 @@ package de.exxcellent.challenge;
 
 import java.util.ArrayList;
 
-public abstract class categorizedColumn<T> implements Column<T>{
+public abstract class CategorizedColumn<T> implements Column<T>{
     private String category;
     private ArrayList<T> values;
 
-    categorizedColumn(String category) {
+    CategorizedColumn(String category) {
         super();
         this.category = category;
         this.values = new ArrayList<>();
