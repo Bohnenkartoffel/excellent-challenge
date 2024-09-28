@@ -1,11 +1,15 @@
 package de.exxcellent.challenge;
 
+/**
+ * column of values
+ * @param <T> type of values to be stored in this column
+ */
 public interface Column<T>{
     /**
      * get value stored at the given row
      * @param row index of the value to be retrieved
      * @return value at given index
-     * @throws Exception exception if no value at the given index or index exceeds column length
+     * @throws Exception exception if index exceeds column length
      */
     T getValue(int row) throws Exception;
 
