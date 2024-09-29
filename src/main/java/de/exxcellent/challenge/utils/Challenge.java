@@ -41,16 +41,11 @@ public abstract class Challenge {
      * @throws IOException if a read attempt fails
      */
     protected void extractCSV() throws IOException {
-        int x, y;
-        x = 0;
-        while (reader.hasNextLine()){
+        for (int y = 0; y < data[0].length; y++) {
             ArrayList<String> line = reader.nextLine();
-            y = 0;
-            for (String column : line) {
-                data[x][y] = column;
-                y++;
+            for (int x = 0; x < data.length; x++) {
+                data[x][y] = line.get(x);
             }
-            x++;
         }
     }
 
@@ -70,7 +65,8 @@ public abstract class Challenge {
         float currentMinimalSpread = Float.MAX_VALUE;
         String result = "No result found";
 
-        for (int i = 0; i < outputColumn.length; i++){
+        //Starting from i=1 to avoid category row
+        for (int i = 1; i < outputColumn.length; i++){
             float a = Float.parseFloat(columnA[i]);
             float b = Float.parseFloat(columnB[i]);
             float spread = calculateSpread(a, b);
