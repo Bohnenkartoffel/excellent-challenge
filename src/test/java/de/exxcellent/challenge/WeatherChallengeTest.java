@@ -10,7 +10,8 @@ public class WeatherChallengeTest {
 
     @BeforeEach
     void setUp() {
-        challenge = new WeatherChallenge("C:\\Users\\linus\\IdeaProjects\\exxcellent-challenge\\programming-challenge\\src\\main\\resources\\de\\exxcellent\\challenge\\weather.csv");
+        String resourcesDirectory = System.getProperty("user.dir") + "\\src\\main\\resources\\de\\exxcellent\\challenge\\";
+        challenge = new WeatherChallenge(resourcesDirectory + "weather.csv");
     }
 
     @Test

@@ -14,8 +14,9 @@ public class CSVFileReaderTest {
 
     @BeforeEach
     void setUp() {
+        String resourcesDirectory = System.getProperty("user.dir") + "\\src\\main\\resources\\de\\exxcellent\\challenge\\";
         try {
-            reader = new CSVFileReader("C:\\Users\\linus\\IdeaProjects\\exxcellent-challenge\\programming-challenge\\src\\main\\resources\\de\\exxcellent\\challenge\\weather.csv");
+            reader = new CSVFileReader(resourcesDirectory + "weather.csv");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }

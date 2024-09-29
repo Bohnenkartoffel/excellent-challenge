@@ -10,7 +10,8 @@ public class FootballChallengeTest {
 
     @BeforeEach
     void setUp() {
-        challenge = new FootballChallenge("C:\\Users\\linus\\IdeaProjects\\exxcellent-challenge\\programming-challenge\\src\\main\\resources\\de\\exxcellent\\challenge\\football.csv");
+        String resourcesDirectory = System.getProperty("user.dir") + "\\src\\main\\resources\\de\\exxcellent\\challenge\\";
+        challenge = new FootballChallenge(resourcesDirectory + "football.csv");
     }
 
     @Test
