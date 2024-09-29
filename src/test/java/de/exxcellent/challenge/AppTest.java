@@ -11,16 +11,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 class AppTest {
 
-    private String successLabel = "not successful";
-
-    @BeforeEach
-    void setUp() {
-        successLabel = "successful";
+    @Test
+    void runDefault() {
+        App.main();
     }
 
     @Test
-    void aPointlessTest() {
-        assertEquals("successful", successLabel, "My expectations were not met");
+    void runWeather() {
+        App.main("--weather", "weather.csv");
     }
 
     @Test
